@@ -1,0 +1,32 @@
+<div class="contenedor">
+    <label>ELIJA EL TIPO DE BUSQUEDA</label>
+    <form name="form">
+        <input type="radio" id="good" name="rbutoom" value="good">
+        <label for="male">good</label><br>
+        <input type="radio" id="bad" name="rbutoom" value="bad">
+        <label for="female">bad</label><br>
+        <input type="radio" id="all" name="rbutoom" value="all">
+        <label for="other">all</label>
+    </form>
+    <button mat-raised-button color="primary" id="bt" (click)=getCheckedSection()>Buscar Heroes</button>
+    <div width="100%">
+        <table class="table table-bordered table-hover table-responsive" border="1">
+            <tr>
+                <td>CRITERIO</td>
+                <td>NOMBRE SUPERHEROE</td>
+                <td>IMAGEN</td>
+            </tr>
+            <tr *ngFor="let heroe of heroeList">
+                <td>
+                    <h1>{{heroe[3]}}</h1>
+                </td>
+                <td>
+                    <h1>{{heroe[1]}}</h1>
+                </td>
+                <td>
+                    <img src={{heroe[2]}} width="100" height="100">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

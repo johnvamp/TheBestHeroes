@@ -1,0 +1,60 @@
+<div class="heroList">
+    <table class="table table-bordered table-hover table-responsive" border="1">
+        <tr>
+            <td>ID</td>
+            <td>NOMBRE</td>
+            <td>IMAGEN SUPERHEROE</td>
+            <td>PERFIL</td>
+        </tr>
+        <tr *ngFor="let heroe of heroes; index as i">
+            <td>
+                <h1>{{heroe[0]}}</h1>
+            </td>
+            <td>
+                <h1>{{heroe[1]}}</h1>
+            </td>
+            <td>
+                <img src={{heroe[2]}} width="100" height="100">
+
+            </td>
+            <td>
+                <button mat-raised-button color="primary" (click)="showProfile(heroes[i])">VER PERFIL</button>
+            </td>
+        </tr>
+    </table>
+    <mat-card *ngIf="profile" class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{cardName[1]}}</mat-card-title>
+            <mat-card-subtitle>Id: {{cardName[0]}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src={{cardName[2]}} alt="foto de {{cardName[1]}}">
+        <mat-card-content>
+            <p>ESTADISTICAS DE PODER:
+                inteligencia: {{cardName[4]}}
+                fuerza:{{cardName[5]}}
+                velocidad: {{cardName[6]}}
+                durabilidad: {{cardName[7]}}
+                poder: {{cardName[8]}}
+                combate: {{cardName[9]}}
+            </p>
+            <p>BIOGRAFIA:
+                alias: {{cardName[10]}}
+                editorial: {{cardName[11]}}
+                bando: {{cardName[12]}}
+            </p>
+            <p>APARIENCIA:
+                genero: {{cardName[13]}}
+                raza: {{cardName[14]}}
+                estatura: {{cardName[15]}}
+                peso: {{cardName[16]}}
+            </p>
+        </mat-card-content>
+        <mat-form-field class="example-full-width">
+            <mat-label>Deja tu comentario</mat-label>
+            <textarea matInput placeholder="Ej. yo creo que el superheroe..."></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary">COMENTAR</button>
+    </mat-card>
+    <router-outlet></router-outlet>
+</div>

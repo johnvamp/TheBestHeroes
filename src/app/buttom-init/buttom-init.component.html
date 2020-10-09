@@ -1,0 +1,44 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>Mejor heroe según estadisticas: {{bestHero[1]}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src={{bestHero[2]}}>
+    <mat-card-content>
+        <div className="row">
+            <div className="col-5">
+                <h1>ESTADISTICAS</h1>
+            </div>
+            <div className="col-5">
+                <label className="col-2">
+                    Inteligencia: {{bestHero[4]}}
+                </label>
+            </div>
+            <div className="col-5">
+                <label className="col-2">
+                    Fuerza: {{bestHero[5]}}
+                </label>
+            </div>
+            <div className="col-5">
+                <label className="col-2">
+                    Velocidad: {{bestHero[6]}}
+                </label>
+            </div>
+            <div className="col-5">
+                <label className="col-2">
+                    Durabilidad: {{bestHero[7]}}
+                </label>
+            </div>
+            <div className="col-5">
+                <label className="col-2">
+                    Potencia: {{bestHero[8]}}
+                </label>
+            </div>
+            <div className="col-5">
+                <label className="col-2">
+                    Combate: {{bestHero[9]}}
+                </label>
+            </div>
+            <router-outlet></router-outlet>
+        </div>
+    </mat-card-content>
+</mat-card>
